@@ -1,0 +1,33 @@
+.modalContent {
+  width: 400px;
+}
+
+.cartReservation {
+  text-align: center;
+  box-shadow: none;
+}
+
+.input {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 6px;
+  border: 1px solid #d9d9d9;
+  margin: 15px auto;
+  color: #808080;
+}
+
+.button {
+  width: 100%;
+  background: #18035b;
+  color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+}
+
+.disabled {
+  background: grey;
+}

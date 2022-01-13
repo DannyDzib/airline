@@ -1,5 +1,7 @@
-import Home from "../screens/home"
-import Reservation from "../screens/reservation"
+import Home from "screens/home"
+import ShoppingCart from "screens/shoppingCart"
+import Flights from "screens/flights"
+import Error404 from "screens/error404"
 
 const routes = [
   {
@@ -7,13 +9,23 @@ const routes = [
     name: "Home Page",
     component: Home,
     exact: true,
+    isProtected: false,
   },
   {
-    path: "/reservation",
-    name: "Reservacion",
-    component: Reservation,
+    path: "/flights",
+    name: "flights",
+    component: Flights,
     exact: true,
+    isProtected: true,
   },
+  {
+    path: "/shopping-cart",
+    name: "Shopping Cart",
+    component: ShoppingCart,
+    exact: true,
+    isProtected: false,
+  },
+  { path: "*", name: "Error 404", component: Error404, exact: false },
   /*
     {
         path: '/character/:id(\\d+)',

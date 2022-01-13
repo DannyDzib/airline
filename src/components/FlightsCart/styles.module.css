@@ -1,0 +1,89 @@
+.card {
+  width: 270px;
+  text-align: center;
+  padding: 0;
+  margin: 10px;
+  position: relative;
+}
+.imageDestination {
+  width: 100%;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 5px;
+}
+.hour {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 20px 0 0 0;
+  color: #18035b;
+}
+.date {
+  font-size: 12px;
+  font-weight: bold;
+  color: #a9a9a9;
+}
+.airplaneIconLogo {
+  position: absolute;
+  width: 25px;
+  top: 5px;
+  right: 10px;
+}
+.contentOriginDestination {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentItem {
+  text-align: center;
+  width: 50%;
+}
+
+.airplaneIcon {
+  width: 20px;
+}
+
+.cities {
+  margin: 0;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.contentBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px;
+  background: #18035b;
+  border: none;
+  width: 49%;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.btn:nth-child(2) {
+  background: none;
+  border: 1px solid #18035b;
+  color: #18035b;
+}
+
+.btn:hover {
+  background: none;
+  color: #18035b;
+}
+.btn:nth-child(2):hover {
+  background: #18035b;
+  color: #fff;
+}
+
+@media (max-width: 741px) {
+  .card {
+    width: 100%;
+  }
+}

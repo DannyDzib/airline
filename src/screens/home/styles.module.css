@@ -1,0 +1,42 @@
+.content {
+  position: relative;
+  margin-top: 80px;
+}
+
+.contentText {
+  position: absolute;
+}
+
+.description {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.title {
+  margin: 0;
+}
+.airplaneImage {
+  width: 80%;
+  margin: auto;
+}
+
+
+
+@media (max-width: 1024px) {
+  .airplaneImage {
+    display: none;
+  }
+  .contentText,
+  .card {
+    position: relative;
+  }
+  .contentText {
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+    right: 0;
+    box-sizing: border-box;
+  }
+}

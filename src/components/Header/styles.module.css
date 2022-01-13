@@ -1,0 +1,16 @@
+.header {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.airplaneIcon {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}

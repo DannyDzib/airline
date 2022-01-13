@@ -1,0 +1,22 @@
+.content {
+  position: relative;
+}
+
+.shippingIcon {
+  color: red;
+}
+.badge {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background: #00afef;
+  top: -8px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50%;
+}
