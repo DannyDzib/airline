@@ -17,6 +17,15 @@
   color: #808080;
 }
 
+.errorMessage {
+  background: rgb(255, 69, 69);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
 .button {
   width: 100%;
   background: #18035b;
@@ -30,4 +39,16 @@
 
 .disabled {
   background: grey;
+}
+
+@media (max-width: 444px) {
+  .modalContent {
+    width: 85%;
+  }
+  .contentText {
+    position: relative;
+  }
+  .contentText {
+    text-align: center;
+  }
 }

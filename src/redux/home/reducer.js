@@ -1,59 +1,35 @@
-import * as types from './types';
-import _ from 'lodash';
+import * as types from "./types"
 
 const homeState = {
-    loading: false,
-    characters: [],
-    character: {}
+  loading: false,
+  cities: [],
+  city: {},
 }
 
 const homeReducer = (state = homeState, action) => {
-    switch (action.type) {
-        case types.LOADING:
-            return {
-                ...state,
-                loading: true
-            }
-        case types.GET_CHARACTERS_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                characters: _.orderBy(_.uniqBy([...state.characters ?? [], ...action.payload], 'id'), ['id']),
-            }
-        case types.GET_CHARACTER_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                character: action.payload,
-            }
-        case types.GET_CHARACTER_LOCAL_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                character: _.filter(state.characters, (character) => character.id === action.payload)[0],
-            }
-        case types.EDIT_CHARACTER_SUCCES:
-            return {
-                ...state,
-                loading: false,
-                characters: [..._.filter(state.characters, (character) => character.id !== action.payload.id), action.payload],
-            }
-        case types.ADD_CHARACTER_SUCCES:
-            return {
-                ...state,
-                loading: false,
-                characters: [...state.characters ?? [], action.payload],
-            }
-        case types.DELETE_CHARACTER_SUCCES:
-            return {
-                ...state,
-                characters: _.filter(state.characters, (character) => character.id !== action.payload),
-            };
-        default:
-            return {
-                ...state
-            }
-    }
+  switch (action.type) {
+    case types.LOADING:
+      return {
+        ...state,
+        loading: true,
+      }
+    case types.GET_CITIES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        cities: action.payload,
+      }
+    case types.GET_CITY_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        city: action.payload,
+      }
+    default:
+      return {
+        ...state,
+      }
+  }
 }
 
 export default homeReducer

@@ -21,22 +21,14 @@
   margin: auto;
 }
 
-
-
 @media (max-width: 1024px) {
   .airplaneImage {
     display: none;
   }
-  .contentText,
-  .card {
+  .contentText {
     position: relative;
   }
   .contentText {
     text-align: center;
-  }
-  .card {
-    width: 100%;
-    right: 0;
-    box-sizing: border-box;
   }
 }

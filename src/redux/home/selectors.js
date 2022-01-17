@@ -1,12 +1,12 @@
 import _ from "lodash"
 const reducersName = "home"
 
-export const getCharactersSelector = (state) => {
-  return _.get(state[reducersName], "characters", [])
+export const getCitiesSelector = (state) => {
+  return _.get(state[reducersName], "cities", [])
 }
 
-export const getCharacterItemSelector = (state) => {
-  return _.get(state[reducersName], "character", {})
+export const getCitySelector = (state) => {
+  return _.get(state[reducersName], "city", {})
 }
 
 export const isLoading = (state) => state[reducersName].loading

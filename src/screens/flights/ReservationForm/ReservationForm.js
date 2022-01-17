@@ -1,19 +1,24 @@
 import { useState } from "react"
-import { useHistory } from "react-router-dom"
 import { Formik, Field } from "formik"
 import Schema from "./Schema"
-import CustomField from "components/CustomField"
 import Modal from "components/Modal"
-import sx from "./styles.module.css"
 import FlightsCart from "components/FlightsCart"
+import CustomField from "components/CustomField"
+import { saveLocalStorageFligth } from "utils/localStorageFlight"
+import sx from "./styles.module.css"
 
 const ReservationForm = (props) => {
-  const { handleChangeModal, showModal = false } = props
+  const { handleChangeModal, showModal = false, item } = props
   const [initialValues, setInitialValues] = useState({})
-  const history = useHistory()
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const handleSubmit = (values) => {
-    history.push(`/flights`, values)
+    const { isSave, error } = saveLocalStorageFligth(item)
+    isSave && handleChangeModal()
+    if (error) {
+      setErrorMessage(error)
+      setTimeout(() => setErrorMessage(null), 3000)
+    }
   }
 
   return (
@@ -21,9 +26,8 @@ const ReservationForm = (props) => {
       showModal={showModal}
       handleChange={handleChangeModal}
       sxClassContent={sx.modalContent}
-      title="RESERVA"
     >
-      <FlightsCart showImage={false} sxClass={sx.cartReservation} />
+      <FlightsCart data={item} showImage={false} sxClass={sx.cartReservation} />
       <Formik
         enableReinitialize
         validationSchema={Schema}
@@ -46,8 +50,8 @@ const ReservationForm = (props) => {
               component={CustomField}
               className={sx.input}
               values={values.date}
-              onChange={handleChange("date")}
-              onBlur={() => setFieldTouched("date")}
+              onChange={handleChange("firstName")}
+              onBlur={() => setFieldTouched("firstName")}
               required
             />
             <Field
@@ -57,8 +61,8 @@ const ReservationForm = (props) => {
               component={CustomField}
               className={sx.input}
               values={values.people}
-              onChange={handleChange("people")}
-              onBlur={() => setFieldTouched("people")}
+              onChange={handleChange("lastName")}
+              onBlur={() => setFieldTouched("lastName")}
               required
             />
             <Field
@@ -68,8 +72,8 @@ const ReservationForm = (props) => {
               component={CustomField}
               className={sx.input}
               values={values.people}
-              onChange={handleChange("people")}
-              onBlur={() => setFieldTouched("people")}
+              onChange={handleChange("address")}
+              onBlur={() => setFieldTouched("address")}
               required
             />
             <Field
@@ -79,10 +83,11 @@ const ReservationForm = (props) => {
               component={CustomField}
               className={sx.input}
               values={values.people}
-              onChange={handleChange("people")}
-              onBlur={() => setFieldTouched("people")}
+              onChange={handleChange("email")}
+              onBlur={() => setFieldTouched("email")}
               required
             />
+            {errorMessage && <p className={sx.errorMessage}>{errorMessage}</p>}
             <button
               className={`${sx.button} ${
                 Object.keys(values).length < 4 && sx.disabled

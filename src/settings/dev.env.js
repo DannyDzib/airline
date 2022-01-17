@@ -1,8 +1,9 @@
 export const DevEnviroment = {
     production: false,
-    apiUrl: "https://rickandmortyapi.com/api/",
+    apiUrl: "https://61d9214fe6744d0017ba8d4b.mockapi.io/",
     endpoint: {
-        characters: "character",
+        cities:'cities',
+        flights: "flights",
     },
 };
 

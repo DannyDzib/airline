@@ -1,0 +1,11 @@
+.contentCarts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.succes {
+  background: rgb(0, 179, 110);
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+}

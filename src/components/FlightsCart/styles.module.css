@@ -11,6 +11,18 @@
   height: 150px;
   border-radius: 5px;
 }
+
+.bodyCard {
+  position: relative;
+}
+.people {
+  position: absolute;
+  font-size: 12px;
+  text-transform: lowercase;
+  color: #a3a3a3;
+  top: -30px;
+  right: 10px;
+}
 .hour {
   font-size: 34px;
   font-weight: bold;
@@ -52,7 +64,8 @@
 .contentBtn {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: 20px 10px;
 }
 
 .btn {

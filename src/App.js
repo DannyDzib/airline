@@ -18,9 +18,9 @@ const App = () => {
                 exact={route.exact}
                 render={(props) => (
                   <>
-                    {!props.location.state && route.isProtected && (
-                      <Redirect to={"/"} />
-                    )}
+                    {route.isProtected &&
+                      (props.location.state ||
+                        props.location.search === "") && <Redirect to={"/"} />}
                     <route.component {...props} {...route.props} />
                   </>
                 )}

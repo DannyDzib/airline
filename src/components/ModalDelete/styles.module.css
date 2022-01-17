@@ -1,0 +1,34 @@
+.modalContent {
+  width: 400px;
+}
+
+.title {
+  background: rgb(238, 238, 238);
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cartReservation {
+  margin-top: 0;
+  text-align: center;
+  box-shadow: none;
+}
+
+.btn {
+  width: 50%;
+  background: none;
+  border: 1px solid #18035b;
+  color: #18035b;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border: 1px solid #fff;
+  background: #18035b;
+  color: #fff;
+}

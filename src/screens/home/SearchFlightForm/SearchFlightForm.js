@@ -9,18 +9,15 @@ import CustomField from "components/CustomField"
 import Card from "components/Card"
 import sx from "./styles.module.css"
 
-const SearchFlightForm = () => {
+const SearchFlightForm = (props) => {
+  const { cities = [] } = props
   const [initialValues, setInitialValues] = useState({})
   const history = useHistory()
 
-  const options = [
-    { id: 1, name: "Chocolate" },
-    { id: 2, name: "Strawberry" },
-    { id: 3, name: "Vanilla" },
-  ]
-
   const handleSubmit = (values) => {
-    history.push(`/flights`, values)
+    history.push(
+      `/flights?destination=${values.destination.name}&origin=${values.origin.name}&date=${values.date}&people=${values.people}`
+    )
   }
 
   return (
@@ -42,7 +39,7 @@ const SearchFlightForm = () => {
           <form onSubmit={handleSubmit}>
             <h3>Busca tu viaje</h3>
             <MultiSelect
-              options={options}
+              options={cities}
               placeholder={"Origen"}
               icon={ActualLocationIcon}
               className={sx.select}
@@ -56,7 +53,7 @@ const SearchFlightForm = () => {
               required
             />
             <MultiSelect
-              options={options}
+              options={cities}
               placeholder={"Destino"}
               icon={LocationIcon}
               className={sx.select}
